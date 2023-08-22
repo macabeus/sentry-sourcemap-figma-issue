@@ -8,6 +8,8 @@ function App() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onCreate = () => {
+    throw new Error('Dummy error!')
+
     const count = Number(inputRef.current?.value || 0);
     parent.postMessage(
       { pluginMessage: { type: "create-rectangles", count } },
